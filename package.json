@@ -1,0 +1,25 @@
+{
+  "name": "mint_beach_vue",
+  "version": "1.0.0",
+  "description": "A VueJS 3 plugin used to extend the mint_beach_js library. This plugin will add mint_beach_js functions to the vue global properties. It will expose a global getCurrentUser() method and keep track of the current user's access token in local storage.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pwgardipee/mint_beach_vue.git"
+  },
+  "keywords": [
+    "ECommerce",
+    "Mint",
+    "Beach",
+    "Shop"
+  ],
+  "author": "Peyton Gardipee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pwgardipee/mint_beach_vue/issues"
+  },
+  "homepage": "https://github.com/pwgardipee/mint_beach_vue#readme"
+}
