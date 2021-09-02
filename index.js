@@ -1,5 +1,6 @@
 import { mb, mb_admin, init } from "mint_beach_js";
 import initAuth from "./auth.js";
+import cart from "./cart.plugin.js";
 
 export default {
   install(Vue, options) {
@@ -27,5 +28,8 @@ export default {
         await checkAuth();
       },
     });
+
+    //Use cart plugin
+    Vue.use(cart);
   },
 };
