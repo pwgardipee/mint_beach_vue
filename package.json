@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/pwgardipee/mint_beach_vue#readme",
   "dependencies": {
-    "mint_beach_js": "^1.0.2",
+    "mint_beach_js": "^1.0.3",
     "vue": "^3.0.0"
   }
 }
