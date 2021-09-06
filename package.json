@@ -1,6 +1,6 @@
 {
   "name": "mint_beach_vue",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A VueJS 3 plugin used to extend the mint_beach_js library. This plugin will add mint_beach_js functions to the vue global properties. It will expose a global getCurrentUser() method and keep track of the current user's access token in local storage.",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/pwgardipee/mint_beach_vue#readme",
   "dependencies": {
-    "mint_beach_js": "^1.0.5",
+    "mint_beach_js": "^1.0.6",
     "vue": "^3.0.0"
   }
 }
