@@ -23,9 +23,10 @@ export default {
           currentUser: this.$mb.auth.getCurrentUser(),
         };
       },
-
-      async mounted() {
-        await checkAuth();
+      methods: {
+        async loadCurrentUser() {
+          await checkAuth();
+        },
       },
     });
 
