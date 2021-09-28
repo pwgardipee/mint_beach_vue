@@ -1,4 +1,4 @@
-import { reactive, toRefs } from "vue";
+import { reactive, toRefs, watch } from "vue";
 const STORAGE_KEY = "cart_items";
 
 export default {
@@ -9,33 +9,37 @@ export default {
       cartValue: 0,
     });
 
+    watch(
+      () => state.cart,
+      () => {
+        calculateMetadata();
+        saveToStorage();
+      },
+      { deep: true }
+    );
+
     const addItem = (item, quantity) => {
       if (!state.cart) state.cart = {};
       if (!state.cart[item.id]) state.cart[item.id] = { ...item, quantity: 0 };
       state.cart[item.id].quantity += quantity;
-      calculateMetadata();
-      saveToStorage();
     };
 
     const removeItem = (itemID, quantity) => {
       if (!state.cart || !state.cart[itemID]) return;
 
-      const numItems = state.cart[itemID];
+      const numItems = state.cart[itemID].quantity;
       if (numItems <= quantity) delete state.cart[itemID];
-      else state.cart[itemID] -= quantity;
-
-      calculateMetadata();
-      saveToStorage();
+      else state.cart[itemID].quantity -= quantity;
     };
 
     const clearCart = () => {
       state.cart = undefined;
-      localStorage.removeItem(STORAGE_KEY);
-      calculateMetadata();
     };
 
     const saveToStorage = () => {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state.cart));
+      if (state.cart)
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state.cart));
+      else localStorage.removeItem(STORAGE_KEY);
     };
 
     const loadFromStorage = () => {
